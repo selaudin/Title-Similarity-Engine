@@ -17,15 +17,18 @@ This project is a backend API built using FastAPI, which finds the most similar 
 │   ├── main.py
 │   ├── models.py
 │   ├── utils.py
+├── .gitignore
 ├── poetry.lock
 ├── pyproject.toml
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 - **main.py**: The main entry point of the FastAPI app, defining routes and endpoints.
 - **models.py**: Contains Pydantic models for request validation.
 - **utils.py**: Utility functions, including the function to compute title similarity using a pre-trained HuggingFace model.
 - **__init__.py**: Marks the app/ directory as a package.
+- **poetry.lock**: Ensures that all developers and environments use the exact same versions of dependencies.
 
 ### Requirements
 - Python 3.7+
