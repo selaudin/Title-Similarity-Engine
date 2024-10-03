@@ -28,7 +28,7 @@ This project is a backend API built using FastAPI, which finds the most similar 
 - **__init__.py**: Marks the app/ directory as a package.
 
 ### Requirements
-- Python 3.9+
+- Python 3.7+
 - Poetry (for dependency management)
 
 ### Installation
