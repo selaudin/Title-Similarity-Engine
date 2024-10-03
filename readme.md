@@ -73,6 +73,8 @@ This project is a backend API built using FastAPI, which finds the most similar 
    ```
 2. The API will be available at http://127.0.0.1:8000.
 
+![Usage Example](https://github.com/selaudin/Title-Similarity-Engine/media/usage.gif)
+
 ### Endpoints
 
 #### GET 
