@@ -2,8 +2,10 @@
 from typing import List
 from pydantic import BaseModel
 
+
 class TitleOut(BaseModel):
     top_result: str
+
 
 class TitleIn(BaseModel):
     reference_title: str
@@ -23,4 +25,3 @@ class TitleIn(BaseModel):
             ]
         }
     }
-

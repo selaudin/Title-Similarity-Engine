@@ -33,6 +33,7 @@ vector representations of titles and calculates the similarity using cosine simi
   model.
 - **__init__.py**: Marks the app/ directory as a package.
 - **poetry.lock**: Ensures that all developers and environments use the exact same versions of dependencies.
+- **pyproject.toml**:
 
 ### Requirements
 
@@ -46,23 +47,18 @@ vector representations of titles and calculates the similarity using cosine simi
     git clone https://github.com/selaudin/Title-Similarity-Engine.git
     cd title-similarity-engine
    ```
-2. Install Poetry:
+2. Install Poetry, and ensure that Poetry is added to your PATH:
 
    ```
    curl -sSL https://install.python-poetry.org | python3 -
+   export PATH="$HOME/.local/bin:$PATH"
    ```
 
-3. Initialize the Project:
+3. Initialize the Project which installs the project dependencies:
 
    ```
    poetry install
    ```
-
-[//]: # (4. Add Dependencies:)
-[//]: # ()
-[//]: # (   ```)
-[//]: # (   poetry add fastapi "uvicorn[standard]" sentence-transformers)
-[//]: # (   ```)
 
 4. Activate the virtual environment:
 

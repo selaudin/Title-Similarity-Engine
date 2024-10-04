@@ -8,7 +8,9 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to Title Similarity API! Please POST the json object to http://127.0.0.1:8000/find-title-similarity"}
+    return {
+        "message": "Welcome to Title Similarity API! Please POST the json object to http://127.0.0.1:8000/find-title-similarity"
+    }
 
 
 @app.post("/find-title-similarity", response_model=TitleOut)
