@@ -2,7 +2,8 @@
 
 For the containerized version, please switch to branch: **dockerized**
 
-**Deployed Swagger Demo URL: https://title-similarity-engine.azurewebsites.net/docs**
+**Deployed Cloud Swagger Demo:** [https://title-similarity-engine.azurewebsites.net/docs](https://title-similarity-engine.azurewebsites.net/docs)
+**HuggingFace Space (Built with Gradio):** [https://huggingface.co/spaces/agolli/title-similarity-model](https://huggingface.co/spaces/agolli/title-similarity-model)
 
 This project is a backend API built using FastAPI, which finds the most similar title from a list of titles based on a
 reference title. It uses a pre-trained sentence embedding model from HuggingFace (sentence-transformers) to compute
