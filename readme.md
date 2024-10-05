@@ -76,7 +76,7 @@ vector representations of titles and calculates the similarity using cosine simi
     http://127.0.0.1:8000/docs
     ```
 
-![Usage Example](https://github.com/selaudin/Title-Similarity-Engine/blob/main/media/usage.gif)
+![Usage Example](https://github.com/selaudin/Title-Similarity-Engine/blob/main/media/usage2.gif)
 
 4. Or the alternative **Redoc** API documentation
     ```
