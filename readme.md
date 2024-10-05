@@ -1,5 +1,7 @@
 # Title Similarity Engine
 
+**Deployed Swagger Demo URL: https://title-similarity-engine.azurewebsites.net/docs**
+
 This project is a backend API built using FastAPI, which finds the most similar title from a list of titles based on a
 reference title. It uses a pre-trained sentence embedding model from HuggingFace (sentence-transformers) to compute
 vector representations of titles and calculates the similarity using cosine similarity.
@@ -15,24 +17,18 @@ vector representations of titles and calculates the similarity using cosine simi
 
 ```
 .
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── models.py
-│   ├── utils.py
-├── .gitignore
-├── poetry.lock
-├── pyproject.toml
-├── README.md
-└── requirements.txt
+├── app/                  Core application package containing the FastAPI app and logic.
+│   ├── __init__.py       Marks the app/ directory as a package.
+│   ├── main.py           The main entry point of the FastAPI app, defining routes and endpoints
+│   ├── models.py         Contains Pydantic models for request validation.
+│   ├── utils.py          Utility functions, including the function to compute title similarity using a pre-trained HuggingFace model.
+├── .gitignore            Prevents specified files from being tracked by Git
+├── docker-compose.yml    Defines services, networks, and volumes for running the app in Docker containers.
+├── Dockerfile            Contains instructions for building the Docker image of the FastAPI app.
+├── poetry.lock           Ensures that all developers and environments use the exact same versions of dependencies.
+├── pyproject.toml        Defines the project configuration and dependencies managed by Poetry.
+└── README.md             Provides project information, setup instructions, and usage guidelines.
 ```
-
-- **main.py**: The main entry point of the FastAPI app, defining routes and endpoints.
-- **models.py**: Contains Pydantic models for request validation.
-- **utils.py**: Utility functions, including the function to compute title similarity using a pre-trained HuggingFace
-  model.
-- **__init__.py**: Marks the app/ directory as a package.
-- **poetry.lock**: Ensures that all developers and environments use the exact same versions of dependencies.
 
 ### Requirements
 
@@ -42,54 +38,36 @@ vector representations of titles and calculates the similarity using cosine simi
 ### Installation
 
 1. Clone the repository:
-   ```bash
+    ```bash
     git clone https://github.com/selaudin/Title-Similarity-Engine.git
     cd title-similarity-engine
-   ```
-2. Install Poetry:
-
-   ```
-   curl -sSL https://install.python-poetry.org | python3 -
-   ```
-
-3. Initialize the Project:
-
-   ```
-   poetry install
+    ```
+   
+2. Build the Docker image:
+    ```bash
+   docker build . --network host -t server
    ```
 
-[//]: # (4. Add Dependencies:)
-[//]: # ()
-[//]: # (   ```)
-[//]: # (   poetry add fastapi "uvicorn[standard]" sentence-transformers)
-[//]: # (   ```)
-
-4. Activate the virtual environment:
-
-   ```
-   poetry shell
-   ```
+3. **Run the app with Docker Compose**:
+    ```bash
+    docker-compose up -d
+    ```
 
 ### Usage
 
-1. Run the FastAPI server:
-
-   ```
-   poetry run uvicorn app.main:app --reload
-   ```
-2. The API will be available at
+1. The API will be available at
     ```
     http://127.0.0.1:8000
     ```
 
-3. Use **SwaggerUI** with interactive exploration, call and test the API directly from the browser.
+2. Use **SwaggerUI** with interactive exploration, call and test the API directly from the browser.
     ```
     http://127.0.0.1:8000/docs
     ```
 
 ![Usage Example](https://github.com/selaudin/Title-Similarity-Engine/blob/main/media/usage.gif)
 
-4. Or the alternative **Redoc** API documentation
+3. Or the alternative **Redoc** API documentation
     ```
     http://127.0.0.1:8000/redoc
     ```
