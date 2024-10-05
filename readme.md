@@ -1,5 +1,9 @@
 # Title Similarity Engine
 
+For the containerized version, please switch to branch: **dockerized**
+
+**Deployed Swagger Demo URL: https://title-similarity-engine.azurewebsites.net/docs**
+
 This project is a backend API built using FastAPI, which finds the most similar title from a list of titles based on a
 reference title. It uses a pre-trained sentence embedding model from HuggingFace (sentence-transformers) to compute
 vector representations of titles and calculates the similarity using cosine similarity.
@@ -15,25 +19,16 @@ vector representations of titles and calculates the similarity using cosine simi
 
 ```
 .
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── models.py
-│   ├── utils.py
-├── .gitignore
-├── poetry.lock
-├── pyproject.toml
-├── README.md
-└── requirements.txt
+├── app/                  Core application package containing the FastAPI app and logic.
+│   ├── __init__.py       Marks the app/ directory as a package.
+│   ├── main.py           The main entry point of the FastAPI app, defining routes and endpoints
+│   ├── models.py         Contains Pydantic models for request validation.
+│   ├── utils.py          Utility functions, including the function to compute title similarity using a pre-trained HuggingFace model.
+├── .gitignore            Prevents specified files from being tracked by Git
+├── poetry.lock           Ensures that all developers and environments use the exact same versions of dependencies.
+├── pyproject.toml        Defines the project configuration and dependencies managed by Poetry.
+└── README.md             Provides project information, setup instructions, and usage guidelines.
 ```
-
-- **main.py**: The main entry point of the FastAPI app, defining routes and endpoints.
-- **models.py**: Contains Pydantic models for request validation.
-- **utils.py**: Utility functions, including the function to compute title similarity using a pre-trained HuggingFace
-  model.
-- **__init__.py**: Marks the app/ directory as a package.
-- **poetry.lock**: Ensures that all developers and environments use the exact same versions of dependencies.
-- **pyproject.toml**:
 
 ### Requirements
 
@@ -47,32 +42,30 @@ vector representations of titles and calculates the similarity using cosine simi
     git clone https://github.com/selaudin/Title-Similarity-Engine.git
     cd title-similarity-engine
    ```
-2. Install Poetry, and ensure that Poetry is added to your PATH:
-
-   ```
+   
+2. Install Poetry and ensure that Poetry is added to your PATH:
+   ```bash
    curl -sSL https://install.python-poetry.org | python3 -
    export PATH="$HOME/.local/bin:$PATH"
    ```
 
 3. Initialize the Project which installs the project dependencies:
-
-   ```
+   ```bash
    poetry install
    ```
 
 4. Activate the virtual environment:
-
-   ```
+   ```bash
    poetry shell
    ```
 
-### Usage
-
-1. Run the FastAPI server:
-
-   ```
+5. Run the FastAPI server:
+   ```bash
    poetry run uvicorn app.main:app --reload
    ```
+   
+### Usage
+
 2. The API will be available at
     ```
     http://127.0.0.1:8000
@@ -102,15 +95,15 @@ vector representations of titles and calculates the similarity using cosine simi
   returns the most similar title.
     - Request Example:
   ```
-   {
-       "reference_title": "Higgs boson in particle physics",
-       "other_titles": [
+  {
+    "reference_title": "Higgs boson in particle physics",
+        "other_titles": [
            "Best soup recipes",
            "Basel activities",
            "Particle physics at CERN"
        ]
-   }
-   ```
+  }
+  ```
     - Response Example:
   ```
   {
