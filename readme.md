@@ -42,7 +42,7 @@ vector representations of titles and calculates the similarity using cosine simi
     git clone https://github.com/selaudin/Title-Similarity-Engine.git
     cd title-similarity-engine
    ```
-   
+
 2. Install Poetry and ensure that Poetry is added to your PATH:
    ```bash
    curl -sSL https://install.python-poetry.org | python3 -
@@ -63,7 +63,7 @@ vector representations of titles and calculates the similarity using cosine simi
    ```bash
    poetry run uvicorn app.main:app --reload
    ```
-   
+
 ### Usage
 
 2. The API will be available at
@@ -97,17 +97,17 @@ vector representations of titles and calculates the similarity using cosine simi
   ```
   {
     "reference_title": "Higgs boson in particle physics",
-        "other_titles": [
-           "Best soup recipes",
-           "Basel activities",
-           "Particle physics at CERN"
-       ]
+    "other_titles": [
+        "Best soup recipes",
+        "Basel activities",
+        "Particle physics at CERN"
+    ]
   }
   ```
     - Response Example:
   ```
   {
-      "top_result": "Particle physics at CERN"
+    "top_result": "Particle physics at CERN"
   }
   ```
 
